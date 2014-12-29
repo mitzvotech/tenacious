@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from app.models import Client, Matter, Document
+from app.models import Client, Matter, Document, Bundle
 from app.forms import ClientForm, MatterForm, DocumentForm, BundleForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView, DeleteView
@@ -43,7 +43,7 @@ def new_matter(request):
 
 class MatterUpdate(UpdateView):
     model = Matter
-    exclude = ['id']
+    form_class = MatterForm
 
 ###
 # Delete an existing Matter
@@ -89,11 +89,20 @@ def logout(request):
     return redirect('/')
 
 ###
+#   
+###
+# from django.views.generic.detail import DetailView
+
+class DocumentDetailView(UpdateView):
+    model = Document
+    form_class = DocumentForm
+
+###
 # REST API
 ###
 
 from rest_framework import viewsets
-from app.serializers import ClientSerializer
+from app.serializers import ClientSerializer, BundleSerializer, DocumentSerializer
 
 class ClientViewSet(viewsets.ModelViewSet):
     """
@@ -101,3 +110,14 @@ class ClientViewSet(viewsets.ModelViewSet):
     """
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
+
+class DocumentViewSet(viewsets.ModelViewSet):
+    queryset = Document.objects.all()
+    serializer_class = DocumentSerializer
+
+class BundleViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Bundle.objects.all()
+    serializer_class = BundleSerializer

@@ -78,4 +78,3 @@ class Bundle(models.Model):
     id = models.CharField(max_length=64, primary_key=True, default=str(uuid.uuid1()))
     matter = models.ForeignKey('Matter')
     documents = models.ManyToManyField(Document)
-    # date_created = models.DateTimeField(auto_now_add=True, null=True)

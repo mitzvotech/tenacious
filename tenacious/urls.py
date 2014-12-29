@@ -6,6 +6,7 @@ from app import views
 
 router = routers.DefaultRouter()
 router.register(r'clients', views.ClientViewSet)
+router.register(r'bundles', views.BundleViewSet)
 
 urlpatterns = patterns('',
     # Home Page
@@ -25,6 +26,7 @@ urlpatterns = patterns('',
 
     # Documents
     url(r'^documents/add','app.views.new_document', name='new_document'),
+    url(r'^documents/(?P<pk>[-_\w]+)/$', views.DocumentDetailView.as_view(), name='document-detail'),
 
     # Bundles
     url(r'^bundles/add','app.views.new_bundle', name='new_bundle'),
