@@ -4,4 +4,5 @@ env
 .DS_Store
 __pycache__
 db.sqlite3
-tmp/
+tmp/*
+!tmp/humans.txt
