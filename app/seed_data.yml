@@ -1,0 +1,40 @@
+attorneys:
+  - first_name: Atticus
+    last_name: Finch
+    email_address: atticus@legalaiddc.org
+    bar_number: 120315215
+    username: afinch
+    password: test
+
+  - first_name: Beth
+    last_name: Harrison
+    email_address: beth@legalaiddc.org
+    bar_number: 999999
+    username: bharrison
+    password: test
+
+clients:
+  - first_name: John
+    last_name: Doe
+    email_address: john@example.com
+  	city: Washington
+	  state: DC
+	  zip_code: 20001
+
+  - first_name: Jane
+    last_name: Smith
+    email_address: jane@gmail.com
+    city: Washington
+    state: DC
+    zip_code: 20002
+
+documents:
+  - title: "LIMITED COURTHOUSE RETAINER AGREEMENT"
+    description: "The standard retainer agreement for limited representation"
+    language: 'en'
+    path: "src/1 - RETAINER.docx"
+
+  - title: "CONTINUANCE PRAECIPE"
+    description: "A praecipe to gain a continuance"
+    language: 'en'
+    path: "src/2 - CONTINUANCE PRAECIPE.docx"

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block content %}
+<form method="POST" class="form-style-8">
+{% csrf_token %}
+<h1>Add a New Matter for a Client</h1>
+
+{{ form | bootstrap }}
+<input type="submit" class="btn btn-primary">
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Are you sure you want to delete {{object}}?</h3>
+<form action="" method="post">{% csrf_token %}
+<input type="submit" value="Yes!"/>  <input type="button" value="No..." onclick="window.history.go(-1);"/>
+</form>
+{% endblock %}
